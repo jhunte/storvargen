@@ -1,0 +1,11 @@
+name = Storvargen
+description = The main Storvargen theme
+core = 7.x
+
+stylesheets[all][] = css/main.css
+
+regions[header] = Header
+
+regions[content] = Content
+
+regions[footer] = Footer

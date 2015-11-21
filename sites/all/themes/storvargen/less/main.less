@@ -1,0 +1,179 @@
+@import "../node_modules/bootstrap/less/bootstrap.less";
+@font-face {
+	font-family: fleshWound;
+	src: url('../fonts/FleshWound.ttf');
+}
+@font-face {
+	font-family: viking;
+	src: url('../fonts/Viking_n.woff');
+}
+
+.make-column(@large, @medium, @small, @tiny: 16) {
+	.make-xs-column(@tiny);
+	.make-sm-column(@small);
+	.make-md-column(@medium);
+	.make-lg-column(@large);
+}
+.make-column-offset(@large, @medium, @small, @tiny) {
+	.make-xs-column-offset(@tiny);
+	.make-sm-column-offset(@small);
+	.make-md-column-offset(@medium);
+	.make-lg-column-offset(@large);
+}
+
+html {
+	body {
+	.make-column(12,12,12,12);
+		#page-wrapper {
+			.make-row();
+			min-width: 1337px;
+
+			#page {
+				.make-column(12,12,12,12);
+				background: url('../images/storvargen_cobble-bg.png') center no-repeat fixed;
+				padding-top: 30px;
+
+				
+				#header {
+					.make-row();
+
+					.section {
+						.make-column(12,12,12,12);
+						#block-system-main-menu {
+							.content {
+								text-align:center;
+
+								
+								ul {
+									margin: auto;
+									padding: 0 0 45px 0;
+									display: inline-block;
+									background: url('../images/storvargen_shelf.png') center bottom no-repeat;
+									min-width: 1210px;
+									text-align:center;
+
+									li {
+										display: inline-block; 
+										margin: 0;
+										padding: 0;
+
+										a.home-link {
+											content: url('../images/storvargen_nav_banner.png');
+										}
+										a.gallery-link {
+											content: url('../images/storvargen_nav_gallery.png');
+										}
+										a.encyclopedia-link {
+											content: url('../images/storvargen_nav_encyclopedia.png');
+										}
+										a.contact-us-link {
+											content: url('../images/storvargen_nav_contact-us.png');
+										}
+										a.archive-link {
+											content: url('../images/storvargen_nav_archive.png');
+										}
+									}
+
+									&::before {
+										content: url('../images/storvargen_nav_left_bookend');
+									}
+
+									&::after {
+										content: url('../images/storvargen_nav_right_bookend');
+									}
+								}
+							}
+						}
+					}
+				}
+
+				#main-wrapper {
+					.make-row();
+
+					#content {
+						.make-column(12,12,12,12);
+
+						.node-comic-page {
+							text-align:center;
+
+
+							.content:first-child {
+								display: inline-block;
+								background: url('../images/storvargen_scroll-bg.png') center no-repeat;
+								min-width: 1004px;
+								min-height: 1296px;
+								
+								.comic-page-nav {
+									font-family: fleshWound;
+									font-size: 55pt;
+									padding: 0 110px;
+
+									&.top {
+										margin-bottom: 62px;
+										margin-top: 10px;
+									}
+									&.bottom {
+										margin-top: 48px;
+									}
+									a {
+										color: black;
+										line-height: 1.0;
+
+										&:hover {
+											text-decoration: none;
+											color: black;
+										}
+										&:active {
+											color: black;
+										}
+
+										&.left {
+											float: left;
+											margin-right: 65px;
+										}
+										&.right {
+											float: right;
+											margin-left: 65px;
+										}
+									}
+								}
+								.field-name-field-comic-page-image {
+									
+								}
+							}
+
+							#comments {
+								width: 1337px;
+								min-height: 475px;
+								margin: auto;
+								background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/storvargen_left_wolf.png') left 93px top 38px no-repeat, url('../images/storvargen_right_wolf.png') right 87px top 38px no-repeat #d5c4ae;
+								padding-top: 30px;
+								display: inline-block;
+
+								.title:first-child {
+									background: url('../images/storvargen_comments_bg.png') center bottom no-repeat;
+									font-family: viking;
+									text-transform: uppercase;
+									padding-bottom: 27px;
+									font-size: 37pt;
+									line-height: 1.0;
+									color: black;
+								}
+							}
+						}
+					}
+
+				}
+
+				#footer-wrapper {
+					.make-row();
+
+					.section {
+						.make-column(12,12,12,12);
+					}
+
+				}
+			}
+		}
+	}
+}
