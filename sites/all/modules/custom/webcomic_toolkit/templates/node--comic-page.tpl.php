@@ -83,26 +83,28 @@
 	
 	<div class="content clearfix"<?php print $content_attributes; ?>>
 		<div class="comic-page-nav top clearfix">
-			<a href="#" class="first left">First</a>
-			<a href="#" class="prev left">Previous</a>
-			<a href="#" class="latest right">Last</a>
-			<a href="#" class="next right">Next</a>
+			<?php
+				print render($content['nav_links']);
+			?>
 		</div>
 	  <?php
 	    // We hide the comments and links now so that we can render them later.
 	    hide($content['comments']);
 	    hide($content['links']);
+	    hide($content['disqus']);
 	    print render($content);
 	  ?>
 	  <div class="comic-page-nav bottom clearfix">
-		<a href="#" class="first left">First</a>
-		<a href="#" class="prev left">Previous</a>
-		<a href="#" class="latest right">Last</a>
-		<a href="#" class="next right">Next</a>
+		<?php
+				print render($content['nav_links']);
+			?>
 		</div>
 	</div>
 	
-	<?php print render($content['comments']); ?>
-  
+	<div id="comments">
+		<h2 class="title">Comments</h2>
+		<?php //print render($content['comments']); ?>
+		<?php print render($content['disqus']); ?>
+  	</div>
 
 </div>

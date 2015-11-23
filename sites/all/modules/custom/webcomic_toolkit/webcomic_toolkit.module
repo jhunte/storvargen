@@ -3,7 +3,7 @@
 function webcomic_toolkit_menu() {
     $items = array();
 
-    $items['comic/latest'] = array(
+    $items['comic/last'] = array(
         'page callback' => 'load_page',
         'page arguments' => array('latest'),
         'access arguments' => array('access content'),
@@ -80,19 +80,70 @@ function load_page($type, $chapter = NULL, $page = NULL) {
         $page_node = node_load($nid);
         $page_view = node_view($page_node);
         $page_view['comments'] = comment_node_page_additions($page_node);
-        dpm($page_view);
+        $links = get_comic_nav_links($page_node, $type);
+        $page_view['nav_links'] = $links;
         $rendered_node = drupal_render($page_view);
-
-        $links = get_comic_nav_links($page_node);
 
         return $rendered_node;
 }
 
-function get_comic_nav_links($node) {
+function get_comic_nav_links($node, $type) {
     $page_number = $node->field_comic_page_number['und'][0]['value'];
     $page_chapter = $node->field_comic_page_chapter['und'][0]['value'];
 
     $comic_index = get_comic_index();
+
+    $links = array("next" => NULL, "prev" => NULL);
+
+    if($type != 'first') {
+        $links['prev'] = check_prev($page_chapter, $page_number, $comic_index);
+    }
+    if($type != 'latest') {
+        $links['next'] = check_next($page_chapter, $page_number, $comic_index);
+    }
+
+    $render = array();
+    if($links['prev']) {
+        $render[] = array(
+            '#theme' => 'link',
+            '#text' => 'First',
+            '#path' => 'comic/first',
+            '#options' => array(
+                'attributes' => array('class' => array('first', 'left')),
+                'html' => TRUE,
+                ),
+        );
+        $render[] = array(
+            '#theme' => 'link',
+            '#text' => 'Previous',
+            '#path' => 'comic/' . $links['prev'],
+            '#options' => array(
+                'attributes' => array('class' => array('prev', 'left')),
+                'html' => TRUE,
+                ),
+        );
+    }
+    if($links['next']) {
+        $render[] = array(
+            '#theme' => 'link',
+            '#text' => 'Last',
+            '#path' => 'comic/last',
+            '#options' => array(
+                'attributes' => array('class' => array('last', 'right')),
+                'html' => TRUE,
+                ),
+        );
+        $render[] = array(
+            '#theme' => 'link',
+            '#text' => 'Next',
+            '#path' => 'comic/' . $links['next'],
+            '#options' => array(
+                'attributes' => array('class' => array('next', 'right')),
+                'html' => TRUE,
+                ),
+        );
+    }
+    return $render;
 }
 
 function get_comic_index() {
@@ -107,5 +158,45 @@ function get_comic_index() {
     $result = $query->execute();
 
     $result = $result->fetchAllAssoc('entity_id');
-    dpm($result->fetchAllAssoc('entity_id'));
+    
+    $comic_index = array();
+    foreach($result as $comic_row) {
+        $comic_index[$comic_row->chapter_number][$comic_row->page_number] = $comic_row->entity_id;
+    }
+    return($comic_index);
+}
+
+function check_prev($chapter, $page, $comic_index) {
+    if(isset($comic_index[$chapter]) && isset($comic_index[$chapter][$page - 1])) {
+        $page = $page - 1;
+        return $chapter . '/' . $page;
+    }
+    else if(($chapter - 1) > 0 && isset($comic_index[$chapter - 1])) {
+        end($comic_index[$chapter - 1]);
+        $page = key($comic_index[$chapter - 1]);
+        reset($comic_index[$chapter - 1]);
+        $chapter = $chapter - 1;
+
+        return $chapter . '/' . $page;
+    }
+    else {
+        return NULL;
+    }
+}
+
+function check_next($chapter, $page, $comic_index) {
+    if(isset($comic_index[$chapter]) && isset($comic_index[$chapter][$page + 1])) {
+        $page = $page + 1;
+        return $chapter . '/' . $page;
+    }
+    else if(isset($comic_index[$chapter + 1])) {
+        reset($comic_index[$chapter + 1]);
+        $page = key($comic_index[$chapter + 1]);
+        $chapter = $chapter + 1;
+
+        return $chapter . '/' . $page;
+    }
+    else {
+        return NULL;
+    }
 }

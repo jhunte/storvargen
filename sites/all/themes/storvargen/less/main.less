@@ -23,6 +23,7 @@
 
 html {
 	body {
+	background: #d5c4ae;
 	.make-column(12,12,12,12);
 		#page-wrapper {
 			.make-row();
@@ -91,7 +92,6 @@ html {
 					.make-row();
 
 					#content {
-						.make-column(12,12,12,12);
 
 						.node-comic-page {
 							text-align:center;
@@ -119,11 +119,8 @@ html {
 										color: black;
 										line-height: 1.0;
 
-										&:hover {
+										&:link, &:visited, &:hover, &:active  {
 											text-decoration: none;
-											color: black;
-										}
-										&:active {
 											color: black;
 										}
 
@@ -158,6 +155,10 @@ html {
 									font-size: 37pt;
 									line-height: 1.0;
 									color: black;
+								}
+								#disqus_thread {
+									width: 710px;
+									margin: auto;
 								}
 							}
 						}
