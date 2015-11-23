@@ -6956,21 +6956,42 @@ html body #page-wrapper #page #main-wrapper #content .node-comic-page .content:f
   margin-left: 65px;
 }
 html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments {
-  width: 1337px;
+  width: 100%;
   min-height: 475px;
   margin: auto;
-  background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/storvargen_left_wolf.png') left 93px top 38px no-repeat, url('../images/storvargen_right_wolf.png') right 87px top 38px no-repeat #d5c4ae;
-  padding-top: 30px;
+  background: url('../images/storvargen_divider.png') center top repeat-x, url('../images/storvargen_comment_wolf.png') center top 38px no-repeat #d5c4ae;
   display: inline-block;
 }
-html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments .title:first-child {
-  background: url('../images/storvargen_comments_bg.png') center bottom no-repeat;
+html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments #sticky-wrapper {
+  width: 738px;
+  margin: auto;
+}
+html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments.fix-bg {
+  background-attachment: fixed;
+}
+html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments .left-wolf {
+  background: url('../images/storvargen_left_wolf.png') no-repeat;
+  height: 432px;
+  width: 218px;
+  float: left;
+}
+html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments .right-wolf {
+  background: url('../images/storvargen_right_wolf.png') no-repeat;
+  height: 430px;
+  width: 224px;
+  float: right;
+}
+html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments h2.title:first-of-type {
+  padding-top: 30px;
+  background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/storvargen_comments_bg.png') center bottom 3px no-repeat #d5c4ae;
   font-family: viking;
   text-transform: uppercase;
-  padding-bottom: 27px;
+  padding-bottom: 30px;
   font-size: 37pt;
   line-height: 1.0;
   color: black;
+  width: 738px;
+  margin: auto;
 }
 html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments #disqus_thread {
   width: 710px;

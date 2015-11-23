@@ -3,6 +3,9 @@ description = The main Storvargen theme
 core = 7.x
 
 stylesheets[all][] = css/main.css
+scripts[] = js/jquery.sticky.js
+scripts[] = js/jquery.fixedbg.js
+scripts[] = js/storvargen.js
 
 regions[header] = Header
 
