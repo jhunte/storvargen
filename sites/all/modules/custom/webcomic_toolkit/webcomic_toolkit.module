@@ -47,6 +47,23 @@ function webcomic_toolkit_theme_registry_alter(&$theme_registry) {
     }
 }
 
+function webcomic_toolkit_form_alter(&$form, &$form_state, $form_id) {
+    $index = get_comic_index();
+    end($index);
+    $chapter = key($index);
+    reset($index);
+    end($index[$chapter]);
+    $page = key($index[$chapter]);
+    reset($index[$chapter]);
+
+    switch($form_id) {
+        case 'comic_page_node_form':
+            $form["field_comic_page_chapter"]["und"][0]["value"]["#default_value"] = $chapter;
+            $form["field_comic_page_number"]["und"][0]["value"]["#default_value"] = $page + 1;
+        break;
+    }
+}
+
 function load_page($type, $chapter = NULL, $page = NULL) {
     $query = new EntityFieldQuery();
     if($type == 'page') {
