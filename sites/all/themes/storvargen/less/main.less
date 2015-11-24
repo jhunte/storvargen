@@ -25,6 +25,9 @@ html {
 	body {
 	background: #d5c4ae;
 	.make-column(12,12,12,12);
+		.stick-bg.fix-bg {
+			background-attachment: fixed !important;
+		}
 		#page-wrapper {
 			.make-row();
 			min-width: 1337px;
@@ -152,10 +155,6 @@ html {
 									margin: auto;
 								}
 
-								&.fix-bg {
-									background-attachment: fixed;
-								}
-
 								.left-wolf {
 									background: url('../images/storvargen_left_wolf.png') no-repeat;
 									height: 432px;
@@ -185,6 +184,84 @@ html {
 									margin: auto;
 								}
 							}
+						}
+
+						.basic-content {
+							margin-top: 10px;
+							width: 100%;
+							background: url('../images/storvargen_divider.png') center top repeat-x, url('../images/storvargen_left_wolf.png') left top 38px no-repeat #d5c4ae;
+
+							#sticky-wrapper {
+									width:1265px;
+									margin-left: 195px;
+									margin-right: auto;
+							}
+							.page-title {
+								padding-top: 125px;
+								background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/storvargen_comments_bg.png') center top 92px repeat-x #d5c4ae;
+								font-family: viking;
+								text-transform: uppercase;
+								padding-bottom: 15px;
+								font-size: 37pt;
+								line-height: 1.0;
+								color: black;
+								width: 1265px;
+								margin: auto;
+							}
+							.content-wrapper {
+								width: 1030px;
+								margin-left: 312px;
+								margin-right: auto;
+							}
+							&#comic-archive {
+								.chapter-block {
+									.clearfix;
+									margin-top: 20px;
+									margin-bottom: 20px;
+									.chapter-thumbnail {
+										float: left;
+										margin-right: 5px;
+									}
+									.chapter-content-right {
+										float:left;
+										.title {
+											font-family: viking;
+											margin-top: 7px;
+										}
+										.description {
+											font-family: Times;
+											font-size: 14px;
+										}
+										.links {
+											ul {
+												padding: 0;
+												li {
+													display: inline;
+
+													a {
+														color: black;
+														line-height: 1.0;
+
+														&:link, &:visited, &:hover, &:active  {
+															text-decoration: none;
+															color: black;
+														}
+													}
+													&::before {
+														content: " - ";
+													}
+													&.first {
+														&::before {
+															content: "Pages: ";
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
 						}
 					}
 

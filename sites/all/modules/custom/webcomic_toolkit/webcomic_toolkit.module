@@ -28,6 +28,11 @@ function webcomic_toolkit_menu() {
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
     );
+    $items['comic/update/chapter/json'] = array(
+        'page callback' => 'update_chapter',
+        'access arguments' => array('administer taxonomy'),
+        'type' => MENU_CALLBACK,
+    );
 
     return $items;
 }
@@ -185,24 +190,46 @@ function archive_page() {
         reset($chapter);
         $firstPage = key($chapter);
         $thumbNode = node_load($chapter[$firstPage]);
+        $chapter_term = taxonomy_get_term_by_name($key, 'chapter');
+        $chapter_thumbnail = array(
+                'path' => image_style_url('thumbnail', $thumbNode->field_comic_page_image['und'][0]['uri']),
+                'alt' => 'Chapter '.$key.' thumbnail',
+                'title' => 'Chapter '.$key.' thumbnail',
+                'attributes' => array('class' => 'chapter-'.$key.'-thumb'),
+            );
+        $chapter_thumbnail = theme('image', $chapter_thumbnail);
         $chapter_block = new stdClass();
         $chapter_block->chapter = $key;
-        $chapter_block->thumbnail = image_style_url('thumbnail', $thumbNode->field_comic_page_image['und'][0]['uri']);
-        $chapter_block->pages = array();
+        $chapter_block->thumbnail = $chapter_thumbnail;
+        $chapter_block->pages = array(
+                '#theme' => 'links',
+                '#links' => array(),
+                '#attributes' => array('class' => array('chapter-'.$key))
+            );
         foreach($chapter as $page => $node_id) {
-            $chapter_block->pages[] = array(
-                '#theme' => 'link',
-                '#text' => $page,
-                '#path' => 'comic/' . $key . '/' . $page,
-                '#options' => array(
-                    'attributes' => array('class' => array('chapter-'.$key)),
-                    'html' => TRUE,
-                    ),
+            $chapter_block->pages['#links'][] = array(
+                'title' => $page,
+                'href' => 'comic/' . $key . '/' . $page,
             );
         }
-        dpm($chapter_block);
+        $chapter_block->term = $chapter_term[$key];
+        $chapter_block->term->edit_class = "";
+        if(user_access('edit terms in '.$chapter_term[$key]->vid)) {
+            $chapter_block->term->edit_class = "edit-inline";
+            //$chapter_block->term->edit_url = url('comic/update/chapter/json');
+        }
+        $content[$key] = $chapter_block;
     }
-    return theme('archive', array('content' => 'hurdurr?'));
+    return theme('archive', array('content' => $content));
+}
+
+function update_chapter() {
+    $received_json = file_get_contents("php://input",  TRUE);
+    $json = drupal_json_decode($received_json, TRUE);
+    $term = taxonomy_term_load($json['tid']);
+    $term->description = $json['description'];
+    taxonomy_term_save($term);
+    drupal_json_output($json);
 }
 
 function get_comic_nav_links($node, $type) {

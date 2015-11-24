@@ -6811,6 +6811,9 @@ html body {
     width: 100%;
   }
 }
+html body .stick-bg.fix-bg {
+  background-attachment: fixed !important;
+}
 html body #page-wrapper {
   margin-left: -15px;
   margin-right: -15px;
@@ -6966,9 +6969,6 @@ html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments 
   width: 738px;
   margin: auto;
 }
-html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments.fix-bg {
-  background-attachment: fixed;
-}
 html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments .left-wolf {
   background: url('../images/storvargen_left_wolf.png') no-repeat;
   height: 432px;
@@ -6996,6 +6996,91 @@ html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments 
 html body #page-wrapper #page #main-wrapper #content .node-comic-page #comments #disqus_thread {
   width: 710px;
   margin: auto;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content {
+  margin-top: 10px;
+  width: 100%;
+  background: url('../images/storvargen_divider.png') center top repeat-x, url('../images/storvargen_left_wolf.png') left top 38px no-repeat #d5c4ae;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content #sticky-wrapper {
+  width: 1265px;
+  margin-left: 195px;
+  margin-right: auto;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .page-title {
+  padding-top: 125px;
+  background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/storvargen_comments_bg.png') center top 92px repeat-x #d5c4ae;
+  font-family: viking;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  font-size: 37pt;
+  line-height: 1.0;
+  color: black;
+  width: 1265px;
+  margin: auto;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-wrapper {
+  width: 1030px;
+  margin-left: 312px;
+  margin-right: auto;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-thumbnail {
+  float: left;
+  margin-right: 5px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right {
+  float: left;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .title {
+  font-family: viking;
+  margin-top: 7px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .description {
+  font-family: Times;
+  font-size: 14px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul {
+  padding: 0;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li {
+  display: inline;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li a {
+  color: black;
+  line-height: 1.0;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li a:link,
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li a:visited,
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li a:hover,
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li a:active {
+  text-decoration: none;
+  color: black;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li::before {
+  content: " - ";
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-content-right .links ul li.first::before {
+  content: "Pages: ";
 }
 html body #page-wrapper #page #footer-wrapper {
   margin-left: -15px;

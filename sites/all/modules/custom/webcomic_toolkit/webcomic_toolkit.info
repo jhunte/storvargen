@@ -1,3 +1,6 @@
 core = "7.x"
 description = "A helpful toolkit for webcomic sites"
 name = "Webcomic Toolkit"
+
+scripts[] = js/jquery.jeditable.js
+scripts[] = js/webcomic_toolkit.js

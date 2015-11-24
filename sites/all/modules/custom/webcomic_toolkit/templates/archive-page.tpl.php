@@ -78,6 +78,29 @@
  * @see template_process()
  */
 ?>
-<div id="comic-archive">
-	<?php dpm($content); ?>
+<div id="comic-archive" class="clearfix stick-bg basic-content">
+	<h2 class="page-title sticky-title">Archive</h2>
+	<div class="content-wrapper clearfix">
+	<?php foreach($content as $chapter): ?>
+		<div id="chapter-<?php print $chapter->chapter ?>" class="chapter-block">
+			<div class="chapter-thumbnail">
+				<?php  
+					print $chapter->thumbnail;
+				?>
+			</div>
+			<div class="chapter-content-right">
+				<h2 class="title">
+					Chapter <?php print $chapter->chapter; ?>
+				</h2>
+				<div class="description">
+					<div id="<?php print $chapter->term->tid?>" class="<?php print $chapter->term->edit_class; ?>" ><?php print $chapter->term->description; ?></div> 
+
+				</div>
+				<div class="links">
+					<?php print render($chapter->pages); ?>
+				</div>
+			</div>
+		</div>
+	<?php endforeach; ?>
+	</div>
 </div>
