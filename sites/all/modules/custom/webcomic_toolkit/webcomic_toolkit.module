@@ -179,6 +179,29 @@ function load_page($type, $chapter = NULL, $page = NULL) {
 }
 
 function archive_page() {
+    $comic_index = get_comic_index();
+    $content = array();
+    foreach($comic_index as $key => $chapter) {
+        reset($chapter);
+        $firstPage = key($chapter);
+        $thumbNode = node_load($chapter[$firstPage]);
+        $chapter_block = new stdClass();
+        $chapter_block->chapter = $key;
+        $chapter_block->thumbnail = image_style_url('thumbnail', $thumbNode->field_comic_page_image['und'][0]['uri']);
+        $chapter_block->pages = array();
+        foreach($chapter as $page => $node_id) {
+            $chapter_block->pages[] = array(
+                '#theme' => 'link',
+                '#text' => $page,
+                '#path' => 'comic/' . $key . '/' . $page,
+                '#options' => array(
+                    'attributes' => array('class' => array('chapter-'.$key)),
+                    'html' => TRUE,
+                    ),
+            );
+        }
+        dpm($chapter_block);
+    }
     return theme('archive', array('content' => 'hurdurr?'));
 }
 
