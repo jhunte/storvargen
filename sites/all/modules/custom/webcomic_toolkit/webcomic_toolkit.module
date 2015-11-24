@@ -23,8 +23,25 @@ function webcomic_toolkit_menu() {
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
     );
+    $items['comic/archive'] = array(
+        'page callback' => 'archive_page',
+        'access arguments' => array('access content'),
+        'type' => MENU_CALLBACK,
+    );
 
     return $items;
+}
+
+function webcomic_toolkit_theme() {
+    $themes = array(
+        'archive' => array(
+            'template' => 'archive-page',
+            'path' => drupal_get_path('module', 'webcomic_toolkit') . '/templates',
+            'variables' => array('content' => NULL),
+        ),
+    );
+
+    return $themes;
 }
 
 /**
@@ -49,18 +66,75 @@ function webcomic_toolkit_theme_registry_alter(&$theme_registry) {
 
 function webcomic_toolkit_form_alter(&$form, &$form_state, $form_id) {
     $index = get_comic_index();
-    end($index);
-    $chapter = key($index);
-    reset($index);
-    end($index[$chapter]);
-    $page = key($index[$chapter]);
-    reset($index[$chapter]);
+    if(!empty($index)) {
+        if(!empty($form["field_comic_page_chapter"]["und"][0]["value"]["#default_value"])) {
+            $chapter = $form["field_comic_page_chapter"]["und"][0]["value"]["#default_value"];
+        }
+        else {
+            end($index);
+            $chapter = key($index);
+            reset($index);
+        }
+        if(!empty($form["field_comic_page_number"]["und"][0]["value"]["#default_value"])) {
+            $page = $form["field_comic_page_number"]["und"][0]["value"]["#default_value"];
+        }
+        else {
+            end($index[$chapter]);
+            $page = key($index[$chapter]);
+            reset($index[$chapter]);
+            $page = $page + 1;
+        }
+    }
+    else {
+        $chapter = 1;
+        $page = 1;
+    }
 
     switch($form_id) {
         case 'comic_page_node_form':
             $form["field_comic_page_chapter"]["und"][0]["value"]["#default_value"] = $chapter;
-            $form["field_comic_page_number"]["und"][0]["value"]["#default_value"] = $page + 1;
+            $form["field_comic_page_number"]["und"][0]["value"]["#default_value"] = $page;
         break;
+    }
+}
+
+function webcomic_toolkit_node_presave($node) {
+    if($node->type == "comic_page") {
+        $index = get_comic_index();
+        $chapter = $node->field_comic_page_chapter['und'][0]['value'];
+        if(isset($node->original) && !empty($node->original)) {
+            $originalChapter = $node->original->field_comic_page_chapter['und'][0]['value'];
+            $originalPage = $node->original->field_comic_page_number['und'][0]['value'];
+            unset($index[$originalChapter][$originalPage]);
+            if(empty($index[$originalChapter])) {
+                unset($index[$originalChapter]);
+            }
+        }
+        $chapter_list = array_keys($index);
+        if(!in_array($chapter, $chapter_list)) {
+            $chapter_list[] = $chapter;
+        }
+        $vocabulary = taxonomy_vocabulary_machine_name_load('chapter');
+        $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+        $term_chapter_list = array();
+        foreach($terms as $term) {
+            /* To do: add variable to make deleting unused chapters optional */
+            if(!in_array($term->name, $chapter_list))
+            {
+                taxonomy_term_delete($term->tid);
+            }
+            else {
+                $term_chapter_list[$term->name] = 1;
+            }
+        }
+        foreach($chapter_list as $chap) {
+            if(!array_key_exists($chap, $term_chapter_list)) {
+                $newChapter = new stdClass();
+                $newChapter->vid = $vocabulary->vid;
+                $newChapter->name = $chap;
+                taxonomy_term_save($newChapter);
+            }
+        }    
     }
 }
 
@@ -102,6 +176,10 @@ function load_page($type, $chapter = NULL, $page = NULL) {
         $rendered_node = drupal_render($page_view);
 
         return $rendered_node;
+}
+
+function archive_page() {
+    return theme('archive', array('content' => 'hurdurr?'));
 }
 
 function get_comic_nav_links($node, $type) {
