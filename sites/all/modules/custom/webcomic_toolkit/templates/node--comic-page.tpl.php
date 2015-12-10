@@ -102,7 +102,7 @@
 	</div>
 	
 	<div id="comments" class="stick-bg">
-		<h2 class="title">Comments</h2>
+		<h2 class="title sticky-title">Comments</h2>
 		<?php //print render($content['comments']); ?>
 		<?php print render($content['disqus']); ?>
   	</div>
