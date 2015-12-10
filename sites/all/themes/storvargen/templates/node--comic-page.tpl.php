@@ -101,7 +101,7 @@
 		</div>
 	</div>
 	
-	<div id="comments">
+	<div id="comments" class="stick-bg">
 		
 		<h2 class="title">Comments</h2>
 		<?php //print render($content['comments']); ?>
