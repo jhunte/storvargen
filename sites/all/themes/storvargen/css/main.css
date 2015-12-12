@@ -7077,11 +7077,11 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-contac
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-picture {
   float: left;
-  width: 25%;
+  margin-right: 15px;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-name {
   float: left;
-  width: 25%;
+  margin-right: 15px;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-name .name {
   font-family: viking;
@@ -7091,7 +7091,6 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-contac
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-blurb {
   float: left;
-  width: 50%;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-thumbnail {
   float: left;
