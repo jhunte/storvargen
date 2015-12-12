@@ -7009,7 +7009,7 @@ html body #page-wrapper #page #main-wrapper #content .basic-content #sticky-wrap
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .page-title {
   padding-top: 125px;
-  background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/storvargen_comments_bg.png') center top 92px repeat-x #d5c4ae;
+  background: url('../images/storvargen_divider.png') center top no-repeat, url('../images/static-title-bg.png') center top 92px repeat-x #d5c4ae;
   font-family: viking;
   text-transform: uppercase;
   padding-bottom: 15px;
@@ -7025,8 +7025,10 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .content-wra
   margin-right: auto;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
+  background: url('../images/section-break.png') center top no-repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:before,
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
