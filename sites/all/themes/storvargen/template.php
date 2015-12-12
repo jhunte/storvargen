@@ -31,11 +31,12 @@ function storvargen_preprocess_block(&$vars) {
 }
 
 function storvargen_preprocess_page(&$variables) {
-  if (isset(views_get_page_view())) {
+	$view = views_get_page_view();
+  	if (isset($view)) {
     // If the content type's machine name is "my_machine_name" the file
     // name will be "page--my-machine-name.tpl.php".
-    $variables['theme_hook_suggestions'][] = 'page__view';
-  }
+    	$variables['theme_hook_suggestions'][] = 'page__view';
+  	}
 }
 
 function seoUrl($string) {
