@@ -104,7 +104,7 @@
 
     <div id="content"><div class="section basic-content stick-bg">
       <?php if ($title): ?>
-        <h2 class="title sticky-title page-title" id="page-title">
+        <h2 class="title sticky-title page-title">
           <?php print $title; ?>
         </h2>
       <?php endif; ?>
