@@ -7094,6 +7094,15 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-contac
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-blurb {
   float: left;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-gallery-view .view-content {
+  text-align: center;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-gallery-view .view-content h3 {
+  font-family: viking;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-gallery-view .view-content .content-section .views-row {
+  display: inline-block;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
   width: 700px;
   margin: auto;
