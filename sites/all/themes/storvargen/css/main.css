@@ -7111,6 +7111,8 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .node-galler
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
+  width: 700px;
+  margin: auto;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:before,
 html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:after {
