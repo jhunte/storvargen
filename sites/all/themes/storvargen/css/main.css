@@ -7082,6 +7082,7 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-contac
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-name {
   float: left;
   margin-right: 15px;
+  width: 30%;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-name .name {
   font-family: viking;
