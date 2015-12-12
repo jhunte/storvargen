@@ -7095,6 +7095,7 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-contac
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
   width: 700px;
+  margin: auto;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-thumbnail {
   float: left;
