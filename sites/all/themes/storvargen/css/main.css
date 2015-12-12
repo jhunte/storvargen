@@ -7068,6 +7068,31 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .content-sec
 html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:after {
   clear: both;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-row {
+  width: 700px;
+  margin: auto;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view img {
+  border-radius: 6px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-picture {
+  float: left;
+  width: 25%;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-name {
+  float: left;
+  width: 25%;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-name .name {
+  font-family: viking;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-name .title {
+  font-family: viking;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-blurb {
+  float: left;
+  width: 50%;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-thumbnail {
   float: left;
   margin-right: 5px;
