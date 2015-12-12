@@ -7093,6 +7093,9 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-contac
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-contact-us-view .views-field-field-blurb {
   float: left;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
+  width: 700px;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-thumbnail {
   float: left;
   margin-right: 5px;
