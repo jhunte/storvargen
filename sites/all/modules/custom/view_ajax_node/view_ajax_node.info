@@ -1,0 +1,4 @@
+name = Views Ajax Node Loader
+description = Renders Nodes by Ajax
+core = 7.x
+files[] = view_ajax_node.module
