@@ -4,6 +4,8 @@ function webcomic_toolkit_menu() {
     $items = array();
 
     $items['comic/last'] = array(
+        'title callback' => 'comic_page_title',
+        'title arguments' => array('latest'),
         'page callback' => 'load_page',
         'page arguments' => array('latest'),
         'access arguments' => array('access content'),
@@ -11,6 +13,8 @@ function webcomic_toolkit_menu() {
      );
 
     $items['comic/%/%'] = array(
+        'title callback' => 'comic_page_title',
+        'title arguments' => array('page', 1, 2),
         'page callback' => 'load_page',
         'page arguments' => array('page', 1, 2),
         'access arguments' => array('access content'),
@@ -18,12 +22,15 @@ function webcomic_toolkit_menu() {
     );
 
     $items['comic/first'] = array(
+        'title callback' => 'comic_page_title',
+        'title arguments' => array('first'),
         'page callback' => 'load_page',
         'page arguments' => array('first'),
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
     );
     $items['comic/archive'] = array(
+        'title' => 'Comic Archive',
         'page callback' => 'archive_page',
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
@@ -141,6 +148,41 @@ function webcomic_toolkit_node_presave($node) {
             }
         }    
     }
+}
+
+function comic_page_title($type, $chapter = NULL, $page = NULL) {
+    $query = new EntityFieldQuery();
+    if($type == 'page') {
+        $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'comic_page')
+            ->fieldCondition('field_comic_page_chapter', 'value', $chapter, '=')
+            ->fieldCondition('field_comic_page_number', 'value', $page, '=')
+            ->fieldOrderBy('field_comic_page_chapter', 'value')
+            ->fieldOrderBy('field_comic_page_number', 'value')
+            ->range(0,1);
+             
+    }
+    else if($type == 'latest') {
+        $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'comic_page')
+            ->fieldOrderBy('field_comic_page_chapter', 'value', 'DESC')
+            ->fieldOrderBy('field_comic_page_number', 'value', 'DESC')
+            ->range(0,1);
+        $result = $query->execute();
+    }
+    else if($type == 'first') {
+        $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'comic_page')
+            ->fieldOrderBy('field_comic_page_chapter', 'value', 'ASC')
+            ->fieldOrderBy('field_comic_page_number', 'value', 'ASC')
+            ->range(0,1);
+        $result = $query->execute();
+    }
+        $result = $query->execute(); 
+        $nid = current(array_keys($result['node']));
+        $page_node = node_load($nid);
+
+        return $page_node->title;
 }
 
 function load_page($type, $chapter = NULL, $page = NULL) {

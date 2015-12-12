@@ -6914,9 +6914,31 @@ html body #page-wrapper #page #header .section #block-system-main-menu .content 
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul::after {
   content: url('../images/storvargen_nav_right_bookend');
 }
+html body #page-wrapper #page #header .section .update-schedule .content {
+  width: 1210px;
+  text-align: center;
+  margin: auto;
+  background: #3f3122;
+  border: 1px solid black;
+  font-family: viking;
+  font-size: 26px;
+  color: black;
+}
+html body #page-wrapper #page #header .section .update-schedule .content p {
+  margin: 2px 0;
+}
 html body #page-wrapper #page #main-wrapper {
   margin-left: -15px;
   margin-right: -15px;
+}
+html body #page-wrapper #page #main-wrapper .system-content {
+  margin-top: 10px;
+  width: 100%;
+  background: url('../images/storvargen_divider.png') center top repeat-x, url('../images/storvargen_left_wolf.png') left top 38px no-repeat #d5c4ae;
+}
+html body #page-wrapper #page #main-wrapper .system-content #content {
+  margin-left: 200px;
+  margin-top: 35px;
 }
 html body #page-wrapper #page #main-wrapper #content .node-comic-page {
   text-align: center;
