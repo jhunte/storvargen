@@ -7024,26 +7024,26 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .content-wra
   margin-left: 312px;
   margin-right: auto;
 }
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section {
   background: url('../images/section-break.png') center top no-repeat;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
 }
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:before,
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:after {
   content: " ";
   display: table;
 }
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:after {
   clear: both;
 }
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:before,
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:after {
   content: " ";
   display: table;
 }
-html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block:after {
+html body #page-wrapper #page #main-wrapper #content .basic-content .content-section:after {
   clear: both;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block .chapter-thumbnail {

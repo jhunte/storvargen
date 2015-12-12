@@ -82,7 +82,7 @@
 	<h2 class="page-title sticky-title">Archive</h2>
 	<div class="content-wrapper clearfix">
 	<?php foreach($content as $chapter): ?>
-		<div id="chapter-<?php print $chapter->chapter ?>" class="chapter-block">
+		<div id="chapter-<?php print $chapter->chapter ?>" class="chapter-block content-section">
 			<div class="chapter-thumbnail">
 				<?php  
 					print $chapter->thumbnail;
