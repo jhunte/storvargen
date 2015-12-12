@@ -7103,6 +7103,31 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-galler
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-gallery-view .view-content .content-section .views-row {
   display: inline-block;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-type-image {
+  text-align: center;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body {
+  background: url('../images/section-break.png') center top no-repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-name-body:after {
+  clear: both;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content#comic-archive .chapter-block {
   width: 700px;
   margin: auto;
