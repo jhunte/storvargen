@@ -7161,11 +7161,24 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-librar
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
   clear: both;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content h3 {
+  margin: 0;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul {
+  text-align: center;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul li {
+  margin: 0;
+  display: inline;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul li:before {
   content: '-';
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul li.views-row-first:before {
   content: none;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul li div {
+  display: inline-block;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia ul.list {
   list-style-type: none;
