@@ -319,6 +319,26 @@ html {
 							}
 
 							.view-encyclopedia {
+								ul.list { 
+									list-style-type: none; 
+									li { 
+										text-indent:-5px; 
+										&:before { 
+											content:"-"; 
+											position: relative; 
+											left:-5px;
+										}
+										a {
+											color: grey;
+											line-height: 1.0;
+
+											&:link, &:visited, &:hover, &:active  {
+												text-decoration: none;
+												color: grey;
+											}
+										}
+									}
+								}
 								.node {
 									h2 {
 										text-align: center;
