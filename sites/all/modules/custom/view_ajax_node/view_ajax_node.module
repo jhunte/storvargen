@@ -43,6 +43,7 @@ function _view_ajax_node_load_noder($nid = 0) {
   $node = node_load($nid, NULL, false);
   if ($node) {
     $vnode = node_view($node);
+    $vnode['title'] = $node->title;
     return theme("node", $vnode);
   }
  // return views_embed_view ('front','page_1', $nid);
