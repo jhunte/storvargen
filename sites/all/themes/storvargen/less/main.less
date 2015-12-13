@@ -55,6 +55,7 @@ html {
 									background: url('../images/storvargen_shelf.png') center bottom no-repeat;
 									min-width: 1210px;
 									text-align:center;
+									position: relative;
 
 									li {
 										display: inline-block; 
@@ -78,6 +79,15 @@ html {
 										}
 										a.library-link {
 											content: url('../images/storvargen_nav_library.png');
+										}
+										&.library {
+											position: absolute;
+											bottom: 44px;
+											left: 40%;
+										}
+										&.home {
+											position: relative;
+											top: -33px;
 										}
 									}
 

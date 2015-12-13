@@ -6887,6 +6887,7 @@ html body #page-wrapper #page #header .section #block-system-main-menu .content 
   background: url('../images/storvargen_shelf.png') center bottom no-repeat;
   min-width: 1210px;
   text-align: center;
+  position: relative;
 }
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul li {
   display: inline-block;
@@ -6910,6 +6911,15 @@ html body #page-wrapper #page #header .section #block-system-main-menu .content 
 }
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.library-link {
   content: url('../images/storvargen_nav_library.png');
+}
+html body #page-wrapper #page #header .section #block-system-main-menu .content ul li.library {
+  position: absolute;
+  bottom: 44px;
+  left: 40%;
+}
+html body #page-wrapper #page #header .section #block-system-main-menu .content ul li.home {
+  position: relative;
+  top: -33px;
 }
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul::before {
   content: url('../images/storvargen_nav_left_bookend');
