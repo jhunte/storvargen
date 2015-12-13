@@ -7169,6 +7169,7 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-encycl
   content: "-";
   position: relative;
   left: -5px;
+  float: left;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia ul.list li a {
   color: grey;
