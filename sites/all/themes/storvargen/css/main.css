@@ -7142,6 +7142,8 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-librar
   padding-bottom: 20px;
   margin-top: 20px;
   margin-top: 5px;
+  width: 700px;
+  margin: auto;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:before,
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
@@ -7158,6 +7160,12 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-librar
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
   clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul li:before {
+  content: '-';
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content ul li.views-row-first:before {
+  content: none;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia ul.list {
   list-style-type: none;
@@ -7166,6 +7174,12 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-encycl
   text-indent: -5px;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia ul.list li:before {
+  content: "+";
+  position: relative;
+  left: -5px;
+  float: left;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia ul.list li.expanded:before {
   content: "-";
   position: relative;
   left: -5px;

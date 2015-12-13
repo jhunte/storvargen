@@ -7,6 +7,7 @@
 		else {
 			$(this).append(content);
 		}
+		$(this).find('.views-field-title a').toggleClass('expanded');
 	}
 
 	$(window).load(function() {

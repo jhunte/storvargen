@@ -313,8 +313,21 @@ html {
 								.view-grouping-content {
 									.content-section;
 									margin-top:5px;
+									width: 700px;
+									margin: auto;
 
-									
+									ul {
+										li {
+											&:before {
+												content: '-';
+											}
+											&.views-row-first {
+												&:before {
+													content: none;
+												}
+											}
+										}
+									}
 								}
 							}
 
@@ -324,10 +337,18 @@ html {
 									li { 
 										text-indent:-5px; 
 										&:before { 
-											content:"-"; 
+											content:"+"; 
 											position: relative; 
 											left:-5px;
 											float:left;
+										}
+										&.expanded {
+											&:before {
+												content:"-"; 
+												position: relative; 
+												left:-5px;
+												float:left;
+											}
 										}
 										a {
 											color: grey;
