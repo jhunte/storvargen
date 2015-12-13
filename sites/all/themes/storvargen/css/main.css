@@ -7104,6 +7104,45 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-galler
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-gallery-view .view-content .content-section .views-row {
   display: inline-block;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library a {
+  color: grey;
+  line-height: 1.0;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library a:link,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library a:visited,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library a:hover,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library a:active {
+  text-decoration: none;
+  color: grey;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-header {
+  text-align: center;
+  font-family: viking;
+  font-size: 1.8em;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content {
+  background: url('../images/section-break.png') center top no-repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-top: 5px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
+  clear: both;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-type-image {
   text-align: center;
 }
