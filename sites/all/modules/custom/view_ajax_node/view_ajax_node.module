@@ -19,11 +19,18 @@ function view_ajax_node_menu() {
   return $items;
 }
 
-function ajax_link_response($type = 'ajax', $nid = 0) {
+function ajax_link_response($type = 'ajax', $nid = 0, $action = 'append') {
   $output = _view_ajax_node_load_noder($nid);
   if ($type == 'ajax') {
     $commands = array();
-    $commands[] = ajax_command_append('.encyclopedia-entry-'.$nid, '<div id="content">' . $output . '</div>');
+    if($action == 'append') {
+      $commands[] = ajax_command_append('.encyclopedia-entry-'.$nid, '<div id="content">' . $output . '</div>');
+      $commands[] = ajax_command_invoke('.encyclopedia-entry-'.$nid.' .views-field-title a', 'attr', array('href', 'ajax-view/ajax/'.$nid.'/remove'));
+    }
+    else if($action == 'remove') {
+      $commands[] = ajax_command_remove('.encyclopedia-entry-'.$nid . ' #content');
+      $commands[] = ajax_command_invoke('.encyclopedia-entry-'.$nid.' .views-field-title a', 'attr', array('href', 'ajax-view/ajax/'.$nid));
+    }
     $page = array(
       '#type' => 'ajax',
       '#commands' => $commands
