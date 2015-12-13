@@ -7143,6 +7143,45 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-librar
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-library .view-grouping-content:after {
   clear: both;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node h2 {
+  text-align: center;
+  font-family: viking;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content {
+  background: url('../images/section-break.png') center top no-repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-top: 5px;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field {
+  float: right;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field.field-type-image {
+  float: left;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field .field-label {
+  text-align: center;
+  font-family: viking;
+  text-decoration: underline;
+  font-size: 1.5em;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-type-image {
   text-align: center;
 }

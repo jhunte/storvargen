@@ -79,9 +79,9 @@
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+  <h2 class="entry-title"><?php print $content['title']; ?></h2>
   <div class="content clearfix"<?php print $content_attributes; ?>>
-  	<h2 class="entry-title"><?php print $content['title']; ?></h2>
+
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
