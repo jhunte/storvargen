@@ -8,6 +8,7 @@
 			$(this).append(content);
 		}
 		$(this).toggleClass('expanded');
+		$(this).toggleClass('collapsed');
 	}
 
 	$(window).load(function() {
