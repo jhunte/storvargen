@@ -7169,6 +7169,8 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-encycl
   padding-bottom: 20px;
   margin-top: 20px;
   margin-top: 5px;
+  margin: auto;
+  width: 700px;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:before,
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content:after {
@@ -7189,16 +7191,18 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-encycl
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field {
   float: right;
   clear: right;
+  width: 45%;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field.field-type-image {
   float: left;
   clear: none;
+  width: auto;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field .field-label {
-  text-align: center;
+  text-align: left;
   font-family: viking;
   text-decoration: underline;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .node-gallery .field-type-image {
   text-align: center;
