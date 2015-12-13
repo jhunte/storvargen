@@ -7024,6 +7024,22 @@ html body #page-wrapper #page #main-wrapper #content .basic-content {
   width: 100%;
   background: url('../images/storvargen_divider.png') center top repeat-x, url('../images/storvargen_left_wolf.png') left top 38px no-repeat #d5c4ae;
 }
+html body #page-wrapper #page #main-wrapper #content .basic-content:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content:after {
+  clear: both;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content:before,
+html body #page-wrapper #page #main-wrapper #content .basic-content:after {
+  content: " ";
+  display: table;
+}
+html body #page-wrapper #page #main-wrapper #content .basic-content:after {
+  clear: both;
+}
 html body #page-wrapper #page #main-wrapper #content .basic-content #sticky-wrapper {
   width: 1142px;
   margin-left: 195px;
@@ -7172,9 +7188,11 @@ html body #page-wrapper #page #main-wrapper #content .basic-content .view-encycl
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field {
   float: right;
+  clear: right;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field.field-type-image {
   float: left;
+  clear: none;
 }
 html body #page-wrapper #page #main-wrapper #content .basic-content .view-encyclopedia .node .content .field .field-label {
   text-align: center;
