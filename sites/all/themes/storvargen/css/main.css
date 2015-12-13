@@ -6826,7 +6826,7 @@ html body #page-wrapper #page {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  background: url('../images/storvargen_cobble-bg.png') center no-repeat fixed;
+  background: url('../images/storvargen_cobble-bg.png') top center no-repeat fixed;
   padding-top: 30px;
 }
 @media (min-width: 768px) {
@@ -6907,6 +6907,9 @@ html body #page-wrapper #page #header .section #block-system-main-menu .content 
 }
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.archive-link {
   content: url('../images/storvargen_nav_archive.png');
+}
+html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.library-link {
+  content: url('../images/storvargen_nav_library.png');
 }
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul::before {
   content: url('../images/storvargen_nav_left_bookend');
