@@ -6953,6 +6953,10 @@ html body #page-wrapper #page #main-wrapper .system-content #content {
   margin-left: 225px;
   margin-top: 35px;
 }
+html body #page-wrapper #page #main-wrapper #content .node-library-entry p,
+html body #page-wrapper #page #main-wrapper #content .node-encyclopedia-entry p {
+  margin: 0;
+}
 html body #page-wrapper #page #main-wrapper #content .node-comic-page {
   text-align: center;
 }
