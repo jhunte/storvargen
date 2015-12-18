@@ -6912,6 +6912,9 @@ html body #page-wrapper #page #header .section #block-system-main-menu .content 
 											content: url('../images/storvargen_nav_library.png');
 										}*/
 }
+html body #page-wrapper #page #header .section #block-system-main-menu .content ul li img {
+  vertical-align: baseline;
+}
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul li.library {
   position: absolute;
   bottom: 44px;
