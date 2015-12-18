@@ -9,12 +9,30 @@ function storvargen_menu_link(array $variables) {
 
   $title_class = strtolower($variables['element']['#title']);
   $title_class = str_replace(' ', '-' , $title_class);
+
+  $theme_path = drupal_get_path('theme', 'storvargen');
+
+  $banners = array(
+  	"home" => theme('image', array('path' => $theme_path . '/images/storvargen_nav_banner.png')),
+  	"gallery" => theme('image', array('path' => $theme_path . '/images/storvargen_nav_gallery.png')),
+  	"contact-us" => theme('image', array('path' => $theme_path . '/images/storvargen_nav_contact-us.png')),
+  	"encyclopedia" => theme('image', array('path' => $theme_path . '/images/storvargen_nav_encyclopedia.png')),
+  	"library" => theme('image', array('path' => $theme_path . '/images/storvargen_nav_library.png')),
+  	"archive" => theme('image', array('path' => $theme_path . '/images/storvargen_nav_archive.png')),
+  );
+
 //add class for li
    $variables['element']['#attributes']['class'][] = 'menu-' . $variables['element']['#original_link']['mlid'];
    $variables['element']['#attributes']['class'][] = $title_class;
 //add class for a
    $variables['element']['#localized_options']['attributes']['class'][] = 'menu-' . $variables['element']['#original_link']['mlid'];
    $variables['element']['#localized_options']['attributes']['class'][] = $title_class.'-link';
+
+   if(array_key_exists($title_class, $banners)) {
+   		$variables['element']['#title'] = $banners[$title_class];
+   		$variables['element']['#localized_options']['html'] = TRUE;
+   }
+
 //dvm($variables['element']);
   return theme_menu_link($variables);
 }

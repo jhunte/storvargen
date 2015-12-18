@@ -6893,24 +6893,24 @@ html body #page-wrapper #page #header .section #block-system-main-menu .content 
   display: inline-block;
   margin: 0;
   padding: 0;
-}
-html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.home-link {
-  content: url('../images/storvargen_nav_banner.png');
-}
-html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.gallery-link {
-  content: url('../images/storvargen_nav_gallery.png');
-}
-html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.encyclopedia-link {
-  content: url('../images/storvargen_nav_encyclopedia.png');
-}
-html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.contact-us-link {
-  content: url('../images/storvargen_nav_contact-us.png');
-}
-html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.archive-link {
-  content: url('../images/storvargen_nav_archive.png');
-}
-html body #page-wrapper #page #header .section #block-system-main-menu .content ul li a.library-link {
-  content: url('../images/storvargen_nav_library.png');
+  /*a.home-link {
+											content: url('../images/storvargen_nav_banner.png');
+										}
+										a.gallery-link {
+											content: url('../images/storvargen_nav_gallery.png');
+										}
+										a.encyclopedia-link {
+											content: url('../images/storvargen_nav_encyclopedia.png');
+										}
+										a.contact-us-link {
+											content: url('../images/storvargen_nav_contact-us.png');
+										}
+										a.archive-link {
+											content: url('../images/storvargen_nav_archive.png');
+										}
+										a.library-link {
+											content: url('../images/storvargen_nav_library.png');
+										}*/
 }
 html body #page-wrapper #page #header .section #block-system-main-menu .content ul li.library {
   position: absolute;
